@@ -3,7 +3,7 @@ package alexa
 // LambdaHandler request handler works with github.com/aws/aws-lambda-go
 type LambdaHandler interface {
 	Handle(RequestEnvelope) (ResponseEnvelope, error)
-	HandleIntent(intentType string, h Handler)
+	HandleIntent(intentNames []string, h Handler)
 	HandleLaunch(Handler)
 	HandleEnd(Handler)
 }
@@ -48,8 +48,11 @@ func (d *DefaultLambdaHandler) Handle(req RequestEnvelope) (ResponseEnvelope, er
 }
 
 // HandleIntent put intent handler to internal map
-func (d *DefaultLambdaHandler) HandleIntent(intentType string, h Handler) {
-	d.intentHandlers[intentType] = h
+func (d *DefaultLambdaHandler) HandleIntent(intentNames []string, h Handler) {
+	for i := range intentNames {
+		name := intentNames[i]
+		d.intentHandlers[name] = h
+	}
 }
 
 // HandleLaunch put request launch handler to internal map
