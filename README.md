@@ -40,7 +40,7 @@ Ofcourse, you all should rewrite code above, each func return not-empty response
 
 ### Without using lambda-go
 
-you can use this as you like,
-you can use struct definitions in this repo,
-you can use LambdaHandler with unmarshalling http.Request.Body
+- you can use this as you like,
+- you can use struct definitions in this repo,
+- you can use LambdaHandler with unmarshalling http.Request.Body
 
