@@ -2,6 +2,10 @@ package alexa
 
 import "errors"
 
+const (
+	Version = "1.0"
+)
+
 // const value of request.type
 const (
 	TypeLaunchRequest       = "LaunchRequest"
