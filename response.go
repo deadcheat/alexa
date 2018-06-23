@@ -7,6 +7,15 @@ type ResponseEnvelope struct {
 	Response          `json:"response"`
 }
 
+// ResponseEnvelopeV1 returns Version fixed struct
+func ResponseEnvelopeV1(sa map[string]interface{}, res Response) ResponseEnvelope {
+	return ResponseEnvelope{
+		Version:           Version,
+		SessionAttributes: sa,
+		Response:          res,
+	}
+}
+
 // Response response section
 type Response struct {
 	OutputSpeech     *OutputSpeech `json:"outputSpeech,omitempty"`
