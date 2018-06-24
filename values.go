@@ -6,6 +6,10 @@ const (
 	Version = "1.0"
 )
 
+var (
+	EmptySessionAttributes = make(map[string]interface{})
+)
+
 // const value of request.type
 const (
 	TypeLaunchRequest       = "LaunchRequest"
@@ -30,6 +34,7 @@ const (
 	IntentAMAZONStartOverIntent  = "AMAZON.StartOverIntent"
 	IntentAMAZONStopIntent       = "AMAZON.StopIntent"
 	IntentAMAZONYesIntent        = "AMAZON.YesIntent"
+	IntentAMAZONMoreIntent       = "AMAZON.MoreIntent"
 )
 
 // OutputSpeech type
