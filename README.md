@@ -27,7 +27,7 @@ func main() {
 		return alexa.EmptyResponse, alexa.ErrNoHandler
 	})
 
-	/// assign intent handlers
+	// assign intent handlers
 	h.HandleIntent([]string{""}, func(alexa.RequestEnvelope) (alexa.ResponseEnvelope, error) {
 		return alexa.EmptyResponse, alexa.ErrNoHandler
 	})
